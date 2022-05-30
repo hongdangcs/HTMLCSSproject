@@ -1,6 +1,6 @@
 *,
-*::before,
-*::after {
+*::after,
+*::before {
   box-sizing: border-box;
 }
 
@@ -108,7 +108,7 @@ a {
 }
 @media screen and (min-width: 1024px) {
   .badge {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
   .badge-small {
     font-size: 1.2rem;
@@ -123,7 +123,7 @@ a {
 }
 .list-inline .list_item {
   display: inline-block;
-  margin: 2rem;
+  margin-right: 2rem;
 }
 .list-tick {
   list-style-image: url(../images/tick.svg);
@@ -154,7 +154,7 @@ a {
   fill: var(--color-primary);
 }
 .icon-white {
-  fill: white;
+  fill: #fff;
 }
 .icon-container {
   background: #f3f9fa;
@@ -476,4 +476,36 @@ a {
     justify-self: start;
     margin: 0 2rem;
   }
+}
+
+/* Collapsibles */
+.collapsible_header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.collapsible_heading {
+  margin-top: 0;
+  font-size: 3rem;
+}
+
+.collapsible_chevron {
+  transform: rotate(-90deg);
+  transition: transform 0.3s;
+}
+
+.collapsible_content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.collapsible-expanded .collapsible_chevron {
+  transform: rotate(0);
+}
+
+.collapsible-expanded .collapsible_content {
+  max-height: 100vh;
+  opacity: 1;
 }
