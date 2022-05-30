@@ -389,3 +389,18 @@ a {
     font-size: 2.4rem;
   }
 }
+
+/*Grid*/
+.grid {
+  display: grid;
+}
+@media screen and (min-width: 768px) {
+  .grid2cols {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .grid3cols {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
