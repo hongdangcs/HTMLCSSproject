@@ -179,9 +179,16 @@ a {
   border: 0;
   border-radius: 40px;
   cursor: pointer;
+  outline: 0;
   white-space: nowrap;
   text-align: center;
   margin: 1rem;
+}
+.btn .icon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+  vertical-align: middle;
 }
 .btn-primary {
   background: var(--color-primary);
@@ -260,7 +267,7 @@ a {
 .input-group .input {
   border: 0;
   flex-grow: 1;
-  padding: 1rem;
+  padding: 1rem 2rem;
 }
 
 /* Cards */
@@ -621,5 +628,29 @@ a {
   .hero_content {
     text-align: left;
     align-self: center;
+  }
+}
+
+/* Domain box*/
+.block-domain .input-group {
+  box-shadow: 0 0 30px 20px #e6ebee;
+  border: 0;
+  margin: 4rem auto;
+  max-width: 670px;
+}
+.block-domain_prices {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 6rem 6rem;
+  font-size: 2rem;
+  font-weight: 600;
+  justify-items: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .block-domain_prices {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
 }
