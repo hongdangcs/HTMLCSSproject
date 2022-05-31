@@ -1,14 +1,3 @@
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-}
-
-/* Typography*/
-::selection {
-  background: var(--color-primary);
-  color: #fff;
-}
 :root {
   --color-primary: #2584ff;
   --color-secondary: #00d9ff;
@@ -20,15 +9,27 @@
   --border-radius: 30px;
 }
 
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+/* Typography*/
+::selection {
+  background: var(--color-primary);
+  color: #fff;
+}
+
 html {
   font-size: 62.5%;
 }
 
 body {
   font-family: Inter, Arial, Helvetica, sans-serif;
-  color: var(--color-body);
   font-size: 2.4rem;
   line-height: 1.5;
+  color: var(--color-body);
 }
 
 h1,
@@ -52,7 +53,7 @@ p {
   margin-top: 0;
 }
 
-@media screen and(min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   body {
     font-size: 1.8rem;
   }
@@ -95,10 +96,10 @@ a {
 /*Badges*/
 .badge {
   border-radius: 20px;
-  padding: 0.5rem 2rem;
-  font-weight: 600;
-  white-space: nowrap;
   font-size: 2rem;
+  font-weight: 600;
+  padding: 0.5rem 2rem;
+  white-space: nowrap;
 }
 .badge-primary {
   background-color: var(--color-primary);
@@ -110,6 +111,7 @@ a {
 }
 .badge-small {
   font-size: 1.6rem;
+  padding: 0.5rem 1.5rem;
 }
 @media screen and (min-width: 1024px) {
   .badge {
@@ -164,8 +166,8 @@ a {
 }
 .icon-container {
   background: #f3f9fa;
-  height: 64px;
   width: 64px;
+  height: 64px;
   border-radius: 100%;
   display: inline-flex;
   justify-content: center;
@@ -177,17 +179,17 @@ a {
 
 /*Buttons*/
 .btn {
+  border-radius: 40px;
+  border: 0;
+  cursor: pointer;
   font-size: 1.8rem;
   font-weight: 600;
-  text-transform: uppercase;
-  padding: 2rem 2rem;
-  border: 0;
-  border-radius: 40px;
-  cursor: pointer;
+  margin: 1rem 0;
   outline: 0;
-  white-space: nowrap;
+  padding: 2rem 2rem;
   text-align: center;
-  margin: 1rem;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 .btn .icon {
   width: 2rem;
@@ -199,10 +201,6 @@ a {
   background: var(--color-primary);
   color: white;
 }
-.btn-stretched {
-  padding-left: 6rem;
-  padding-right: 6rem;
-}
 .btn-primary:hover {
   background: #3a8ffd;
 }
@@ -211,7 +209,7 @@ a {
   color: white;
 }
 .btn-secondary:hover {
-  background: #00c8eb;
+  background: #05cdf0;
 }
 .btn-accent {
   background: var(--color-accent);
@@ -234,6 +232,10 @@ a {
   background-color: var(--color-heading);
   color: white;
 }
+.btn-stretched {
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
 
 @media screen and (min-width: 1024px) {
   .btn {
@@ -243,12 +245,12 @@ a {
 
 /*Input*/
 .input {
-  padding: 1.5rem 3.5rem;
-  border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
-  outline: 0;
+  border: 1px solid var(--color-border);
   color: var(--color-heading);
   font-size: 2rem;
+  outline: 0;
+  padding: 1.5rem 3.5rem;
 }
 ::placeholder {
   color: #cdcbd7;
@@ -256,7 +258,7 @@ a {
 
 @media screen and (min-width: 1024px) {
   .input {
-    font-size: 1.5px;
+    font-size: 1.5rem;
   }
 }
 
@@ -266,13 +268,13 @@ a {
   border-radius: var(--border-radius);
   display: flex;
 }
-.input-group .btn {
-  margin: 4px;
-}
 .input-group .input {
   border: 0;
   flex-grow: 1;
   padding: 1rem 2rem;
+}
+.input-group .btn {
+  margin: 4px;
 }
 
 /* Cards */
@@ -301,7 +303,7 @@ a {
   background: #02cdf1;
 }
 .card-primary .badge-primary {
-  background-color: #124be4;
+  background: #124be4;
 }
 
 /* Plans */
@@ -396,6 +398,7 @@ a {
   font-size: 3rem;
   font-style: italic;
   color: var(--color-body-darker);
+  line-height: 1.3;
 }
 .quote_text::before {
   content: open-quote;
@@ -438,7 +441,7 @@ a {
 }
 @media screen and (min-width: 768px) {
   .grid2cols {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media screen and (min-width: 1024px) {
@@ -456,6 +459,7 @@ a {
 }
 .testimonial_image {
   position: relative;
+  margin: 0 3rem;
 }
 .testimonial_image > .icon-container {
   position: absolute;
@@ -463,12 +467,16 @@ a {
   right: -32px;
 }
 @media screen and (min-width: 768px) {
-  .testimonial.quote,
+  .testimonial_image {
+    margin: 0;
+  }
+  .testimonial .quote,
   .testimonial .quote_author {
     font-size: 2.4rem;
   }
   .testimonial .quote {
     margin-left: 6rem;
+    margin-right: 0;
   }
 }
 
@@ -614,6 +622,9 @@ a {
   box-shadow: 0 0 0 3px #666;
   border-radius: 5px;
 }
+.nav_brand {
+  transform: translateY(5px);
+}
 
 @media screen and (min-width: 768px) {
   .nav_toggler {
@@ -664,7 +675,7 @@ a {
 .block-domain_prices {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 6rem 6rem;
+  grid-template-rows: repeat(2, 6rem);
   font-size: 2rem;
   font-weight: 600;
   justify-items: center;
@@ -674,7 +685,7 @@ a {
 
 @media screen and (min-width: 768px) {
   .block-domain_prices {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100rem, 1fr));
   }
 }
 
@@ -702,7 +713,7 @@ a {
   width: 100%;
 }
 @media screen and (min-width: 768px) {
-  .feature:nth-of-type() .feature_content {
+  .feature:nth-of-type(even) .feature_content {
     order: 2;
   }
 }
@@ -721,5 +732,71 @@ a {
   .block-showcase_image > img {
     width: auto;
     max-width: 700px;
+  }
+}
+
+/*Footer*/
+.footer {
+  background: #232323;
+}
+.footer_section {
+  padding: 2rem;
+  border-bottom: 1px solid #393939;
+}
+.footer_section .list {
+  margin: 0;
+}
+.footer_heading {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.footer_brand {
+  margin-top: 5rem;
+  text-align: center;
+}
+.footer_brand img {
+  width: 100%;
+  max-width: 230px;
+}
+.footer_copyright {
+  font-size: 2.1rem;
+  color: white;
+  opacity: 0.3;
+}
+.footer a {
+  color: #777;
+  transition: color 0.3;
+  font-size: 1.6rem;
+  line-height: 1rem;
+}
+.footer a:hover {
+  color: white;
+}
+@media screen and (min-width: 768px) {
+  .footer {
+    font-size: 1.5rem;
+  }
+  .footer_sections {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  }
+  .footer .collapsible_chevron {
+    display: hidden;
+  }
+  .footer .collapsible_content {
+    opacity: 1;
+    max-height: 100%;
+  }
+  .footer_brand {
+    order: -1;
+    margin-top: 1rem;
+  }
+  .footer_copyright {
+    font-size: 1.5rem;
+  }
+  .footer_section {
+    border: 0;
+  }
+  .footer_heading {
+    font-size: 1.6rem;
   }
 }
